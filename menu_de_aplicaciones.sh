@@ -1,7 +1,8 @@
 #!/bin/bash
 
 source ./statsWords.sh
-source ./statsUsageWords.sh
+source ./statsUsageWords.sh 
+source ./findNames.sh
 texto=$(cat $@)
 op=1
 while [[ $op -ne 0 ]]; 
@@ -10,7 +11,10 @@ do
 	case $op in
 		[1]*) statswords $texto ;;
 		[2]*) statsusagewords $1 ;;
-		[0]*0) break ;;
+		[3]*) findnames $1 ;;
+		[4]*) statssentences $1 ;;
+		[5]*) blacklinescounter $1 ;;	
+		[0]*) break ;;
 	esac
 done
 
