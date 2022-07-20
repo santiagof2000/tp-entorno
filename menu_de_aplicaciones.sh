@@ -3,6 +3,7 @@
 source ./statsWords.sh
 source ./statsUsageWords.sh 
 source ./findNames.sh
+source ./statsSentences.sh
 texto=$(cat $@)
 op=1
 while [[ $op -ne 0 ]]; 
