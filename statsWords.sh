@@ -29,6 +29,7 @@ function statswords(){
 		ACUMULADOR=$((ACUMULADOR+${#PALABRA}))
 		CONTADOR=$((CONTADOR+1))
 	done
-	echo 'Promedio de letras por palabra: ' $((ACUMULADOR/CONTADOR))
+	PROMEDIO=$(echo "scale=2; $ACUMULADOR/$CONTADOR" | bc)
+	echo 'Promedio de letras por palabra: ' $PROMEDIO
 	}
 

@@ -3,7 +3,6 @@
 statssentences(){
         regex="\.$"
         contador=1
-        echo oracion: $contador
                 for PALABRA in $(cat $1)
                 do
                         until [[ $PALABRA =~ $regex ]]
@@ -13,13 +12,13 @@ statssentences(){
                         done
                         if [[ $PALABRA =~ $regex ]]
                         then
+				echo oracion: $contador
                                 echo $PALABRA >> 'oracion'$contador
-                                cat 'oracion'$contador
+                               # cat 'oracion'$contador
 				cat 'oracion'$contador | wc -c >> "longitud"$contador
 				echo 'longitud: ' $(cat $"longitud$contador")			
 				rm 'oracion'$contador
                                 contador=$((contador+1))
-                                echo oracion: $contador
                                 continue
                         fi
                 done
@@ -72,7 +71,9 @@ promediolongitudoraciones(){
                 ACUMULADOR=$((ACUMULADOR+$cantidad))
                 CONTADOR=$((CONTADOR+1))
         done
-        echo 'Promedio de letras por oracion: ' $((ACUMULADOR/CONTADOR))
+	PROMEDIO=$(echo "scale=2; $ACUMULADOR/$CONTADOR" | bc)
+        echo 'Promedio de letras por palabra: ' $PROMEDIO
+        #echo 'Promedio de letras por oracion: ' $((ACUMULADOR/CONTADOR))
 	rm longitud1 longitud2 longitud3 longitud4 longitud5
 
 }

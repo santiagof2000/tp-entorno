@@ -10,6 +10,7 @@ statsusagewords(){
                        	echo "$apariciones $PALABRA" >> palabrasmayores.txt
                	fi
         done
+	echo N: Palabra:
         sort -nr palabrasmayores.txt | uniq | head
         rm palabrasmayores.txt
 }
