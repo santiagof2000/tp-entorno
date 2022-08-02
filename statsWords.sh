@@ -12,7 +12,7 @@ function statswords(){
         done
 	echo 'Palabra mas larga: ' $PALABRAMAYOR
 
-	PALABRAMENOR='fdsaaadddffffffffffffgfdgdfgfdgdf'
+	PALABRAMENOR='electroencefalografista'
         for PALABRA in $@
         do
 		if [ ${#PALABRA} -lt ${#PALABRAMENOR} ]

@@ -2,8 +2,7 @@
 
 statsusagewords(){
 	for PALABRA in $(cat $1)
-        do
-               # echo ${#PALABRA}
+        do    
                 if [ ${#PALABRA} -ge 4 ]
         	then
 			apariciones=$(grep -o -i $PALABRA $1 | wc -l)
