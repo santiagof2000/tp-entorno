@@ -6,7 +6,6 @@ blanklinescounter(){
 	cantidadDeLineasSinLasVacias=$(sed '/^$/d' $1  | wc -l)
 
 	lineasEnBlanco=$((cantidadDeLineas - cantidadDeLineasSinLasVacias))
-	#echo $cantidadDeLineas
-	#echo $cantidadDeLineasSinLasVacias
+	
 	echo "Cantidad de lineas en blanco: $lineasEnBlanco"
 }
