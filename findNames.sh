@@ -7,8 +7,10 @@ findnames(){
 	do
 		if [[ $palabra =~ $regex ]]
 		then
-			echo $palabra
+			echo $palabra >> propios
 		fi
 	done
+	sort propios | uniq
+	rm propios
 
 }
